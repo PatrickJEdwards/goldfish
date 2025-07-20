@@ -123,7 +123,7 @@ find_last_presence <- function(node, time, nodes, composition_changes) {
   if (!all(is.numeric(times))) {
     times <- as.numeric(times, unit = "seconds")
   }
-  presences <- pull(composition_changes[composition_changes$node == node, "replace"])
+  presences <- composition_changes[composition_changes$node == node, "replace"]
   times <- times - time
   times <- which(times <= 0)
   if (length(times) == 0) {
@@ -770,7 +770,7 @@ check_events.network.goldfish <- function(
     warning("At least one self-directed event in data.")
   }
   if (is.null(attr(object, "nodes")) ||
-    !any(nodes_name %in% attr(object, "nodes"))) {
+    !all(nodes_name %in% attr(object, "nodes"))) {
     stop("The nodeset(s) associated to this network were mispecified.")
   }
   if (!is.null(composition_changes)) {

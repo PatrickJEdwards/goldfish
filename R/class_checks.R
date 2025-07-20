@@ -830,7 +830,7 @@ check_presence <- function(
     if (length(event_nodes) == 1) {
       node <- event_nodes
       presence <- find_last_presence(node, time, nodes, composition_changes)
-      if (presence == -1) presence <- nodes$present[which(nodes$label == node)]
+      if (presence == -1) presence <- nodes$present[node]
       if (!presence) {
         stop(
           "Error in the events timestamps: the node ",
@@ -842,7 +842,7 @@ check_presence <- function(
       if (!onlyReceiver) {
         node <- event_nodes[1]
         presence <- find_last_presence(node, time, nodes, composition_changes)
-        if (presence == -1) presence <- nodes$present[which(nodes$label == node)]
+        if (presence == -1) presence <- nodes$present[node]
         if (!presence) {
           stop(
             "Error in the events timestamps: the node ", nodes$label[node],
@@ -852,7 +852,7 @@ check_presence <- function(
       }
       node <- event_nodes[2]
       presence <- find_last_presence(node, time, nodes, composition_changes)
-      if (presence == -1) presence <- nodes$present[which(nodes$label == node)]
+      if (presence == -1) presence <- nodes$present[node]
       if (!presence) {
         stop(
           "Error in the events timestamps: the node ", nodes$label[node],

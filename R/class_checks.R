@@ -123,7 +123,7 @@ find_last_presence <- function(node, time, nodes, composition_changes) {
   if (!all(is.numeric(times))) {
     times <- as.numeric(times, unit = "seconds")
   }
-  presences <- pull(composition_changes[composition_changes$node == node, "replace"])
+  presences <- composition_changes[composition_changes$node == node, "replace"][[1]]
   times <- times - time
   times <- which(times <= 0)
   if (length(times) == 0) {

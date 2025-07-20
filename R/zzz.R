@@ -1,4 +1,4 @@
-#' @importFrom utils packageVersion packageDescription
+#' @importFrom utils packageVersion packageDescription dplyr
 .onAttach <- function(libname, pkgname) {
   if (!interactive()) {
     return()

@@ -44,7 +44,8 @@ Imports:
     rlang,
     tibble,
     cli,
-    lifecycle
+    lifecycle,
+    dplyr
 LinkingTo:
     Rcpp,
     RcppArmadillo

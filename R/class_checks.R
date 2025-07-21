@@ -129,7 +129,7 @@ find_last_presence <- function(node, time, nodes, composition_changes) {
   if (length(times) == 0) {
     return(-1)
   } else {
-    return(presences[length(times)])
+    return(presences[length(times),])
   }
 }
 

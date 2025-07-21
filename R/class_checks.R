@@ -770,7 +770,7 @@ check_events.network.goldfish <- function(
     warning("At least one self-directed event in data.")
   }
   if (is.null(attr(object, "nodes")) ||
-    !any(nodes_name %in% attr(object, "nodes"))) {
+    !all(nodes_name %in% attr(object, "nodes"))) {
     stop("The nodeset(s) associated to this network were mispecified.")
   }
   if (!is.null(composition_changes)) {
